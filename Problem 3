@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Problem3 {
+	public static void main(String[] args) {
+		System.out.println("Printing odd numbers");
+		int a=0;
+		try (Scanner in = new Scanner(System.in)) {
+			System.out.println("Enter the value for a: ");
+			a= in.nextInt();
+			a = (a%2 == 1) ? a : a-1;
+			for(int i=1;i<=a;i++) {
+				System.out.print(i*2 -1);
+			if(i<a)
+				System.out.print(",");
+			else
+				break;
+			}
+		}
+
+	}
+
+}
