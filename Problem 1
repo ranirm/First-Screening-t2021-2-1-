@@ -1,0 +1,50 @@
+import java.util.*
+
+public class Calculator {
+	
+	public double calculate(double a, double b, String operation) {
+		double answer= 0;
+		switch (operation) {
+		case "+":
+			answer = a+b;
+			break;
+		case "-":
+			answer = a-b;
+			break;
+		case "*":
+			answer = a*b;
+			break;
+		case "/":
+			answer = a/b;
+			break;
+		default:
+			break;
+		}
+		return answer;
+	}
+	
+public static void main(String[] args)
+ {
+	System.out.println("Simple Calaculator Program");
+	double a,b,output=0;
+	String operation = null;
+	List<String> validOperations=Arrays.asList("+","-","*","/");
+	try (Scanner in = new Scanner(System.in)) {
+		System.out.println("Enter value for a :");
+		a= in.nextDouble();
+		System.out.println("Enter value for b :");
+		b= in.nextDouble();
+		System.out.println("Enter type of operation like :");
+		operation =in.next();
+		if(validOperations.contains(operation)) {
+		Calculator calc= new Calculator();
+		output = calc.calculate(a, b, operation);
+		System.out.println("The answer is "+a+operation+b+"= "+output);
+		} else {
+			System.out.println("The given operation "+operation +" is not valid operation");
+		}
+		
+	}
+	
+}
+}
